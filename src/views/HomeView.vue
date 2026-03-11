@@ -10,13 +10,18 @@
 
       <div class="col-12 col-md-3">
         <div class="homepage_element card d-flex align-items-center justify-content-center">
-          Clothing
+          <UtilityCard label1="Today's clothing" lable2="Long sleeve shirt, wide brim hat">
+
+          </UtilityCard>
         </div>
       </div>
 
       <div class="col-12 col-md-3">
         <div class="homepage_element card d-flex align-items-center justify-content-center">
-          Sunscreen
+          <UtilityCard label1="Sunscreen usage" lable2="2 teaspoons, every two hours">
+            <img src="../assets/sunscreen.png" class="col-12 offset-4" alt="Fit image"
+              style="width: 20%; height: 20%; object-fit: contain;">
+          </UtilityCard>
         </div>
       </div>
 
@@ -25,6 +30,7 @@
 </template>
 
 <script setup>
+import UtilityCard from '@/components/UtilityCard.vue';
 import UVCard from '@/components/UVCard.vue';
 
 // No script needed for now
