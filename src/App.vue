@@ -1,9 +1,9 @@
 <script setup></script>
 
 <template>
-  <div class="d-flex vh-100">
+  <div class="d-flex min-vh-100">
     <!-- Sidebar Navigation -->
-    <nav class="d-flex col-2 flex-column p-3 bg-sidebar" style="min-height: 100vh">
+    <nav class="d-flex col-2 flex-column p-3 bg-sidebar">
       <span class="primary fs-5 mb-4">SunSafe</span>
       <ul class="nav flex-column">
         <li class="nav-item mb-2">
