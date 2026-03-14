@@ -19,7 +19,7 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="col-8 col-md-10 offset-1 offset-md-0">
+    <main class="col-8 col-md-10 offset-1 offset-md-0 bg-main">
       <router-view></router-view>
     </main>
   </div>

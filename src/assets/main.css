@@ -2,7 +2,7 @@
 
 .primary {
   text-decoration: none;
-  color: #d58e94;
+  color: #000;
 }
 
 .secondary {
@@ -21,14 +21,19 @@
   background-color: #ffdbb6;
 }
 
+.accent-brightyellow {
+  text-decoration: none;
+  background-color: #ffda33;
+}
+
 .bg-main {
   text-decoration: none;
-  background-color: #ffffff;
+  background-color: #edfcff;
 }
 
 .bg-sidebar {
   text-decoration: none;
-  background-color: #f3f2f0;
+  background-color: #fff;
 }
 
 .bg-awareness {

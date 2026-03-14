@@ -2,8 +2,8 @@
   <div class="container-fluid mt-3">
     <div class="row g-3 justify-content-start">
 
-      <div class="col-12 col-md-6">
-        <div class="homepage_element accent-yellow">
+      <div class="col-12 col-md-6 h-md-100">
+        <div class="h-auto card">
           <UVCard :location="locationString" :uv-label="uvLable()" :current-u-v="uvPercentage()"
             :uv-description="uvDescription()" />
         </div>
@@ -38,8 +38,8 @@
 
       <div class="col-12"></div>
       <!-- Timeline -->
-      <div class="col-12 col-md-8">
-        <div class="homepage_element card d-flex align-items-center justify-content-center">
+      <div class="col-12">
+        <div class="homepage_element_lg card align-items-center justify-content-center">
           <WeatherTrendCard :hourly-weather-data="currentHourlyData"></WeatherTrendCard>
         </div>
       </div>
@@ -91,11 +91,11 @@ const uvPercentage = () => {
 const uvLable = () => {
   var uv = currentUV.value;
   if (uv < 3) {
-    return `Current UV: ${uv}, Low`
+    return `Low`
   } else if (uv < 6) {
-    return `Current UV: ${uv}, Moderate`
+    return `Moderate`
   } else {
-    return `Current UV: ${uv}, High`
+    return `High`
   }
 }
 
@@ -145,6 +145,11 @@ const fetchWeatherData = async (url) => {
 <style scoped>
 .homepage_element {
   height: 200px;
+  border-radius: 10px;
+}
+
+.homepage_element_lg {
+  height: 400px;
   border-radius: 10px;
 }
 

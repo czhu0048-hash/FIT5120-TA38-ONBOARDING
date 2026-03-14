@@ -30,14 +30,48 @@ const buildSeries = (data) => {
 onMounted(() => {
     const { uviData, hourLabels } = buildSeries(props.hourlyWeatherData);
     chart = new ApexCharts(chartRef.value, {
-        chart: { type: 'line', width: '100%', height: '100%' },
+        chart: {
+            type: 'area',
+            width: '100%',
+            height: '100%',
+            foreColor: "#f80",
+            toolbar: {
+                autoSelected: "pan",
+                show: false
+            }
+        },
+        grid: {
+            borderColor: "#555",
+            clipMarkers: false,
+            yaxis: {
+                lines: {
+                    show: false
+                }
+            }
+        },
+        dataLabels: {
+            enabled: false
+        },
+        fill: {
+            gradient: {
+                enabled: true,
+                opacityFrom: 0.55,
+                opacityTo: 0
+            }
+        },
+        colors: ["#f80"],
         series: [{ name: 'UV Index', data: uviData }],
         xaxis: { categories: hourLabels },
         title: {
             text: "UV level in next 24 hours",
             align: 'center',
             style: { fontSize: '18px', color: '#263238' }
-        }
+        },
+        markers: {
+            size: 5,
+            colors: ["#f55"],
+            strokeWidth: 3
+        },
     });
     chart.render();
 });
