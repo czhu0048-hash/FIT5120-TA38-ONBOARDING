@@ -1,6 +1,5 @@
 <template>
     <div class="container">
-        <!-- <h1>Daily UV Index Trend</h1> -->
         <div ref="chartRef"></div>
     </div>
 </template>
@@ -20,10 +19,10 @@ const chartRef = ref(null);
 let chart = null;
 
 const buildSeries = (data) => {
-    const first24 = (data || []).slice(0, 24);
+    const first12 = (data || []).slice(0, 12);
     return {
-        uviData: first24.map(entry => entry.uvi),
-        hourLabels: first24.map((_, i) => `${i}:00`)
+        uviData: first12.map(entry => entry.uvi),
+        hourLabels: first12.map((_, i) => `${i}:00`)
     };
 };
 
@@ -63,7 +62,7 @@ onMounted(() => {
         series: [{ name: 'UV Index', data: uviData }],
         xaxis: { categories: hourLabels },
         title: {
-            text: "UV level in next 24 hours",
+            text: "UV level in next 12 hours",
             align: 'center',
             style: { fontSize: '18px', color: '#263238' }
         },

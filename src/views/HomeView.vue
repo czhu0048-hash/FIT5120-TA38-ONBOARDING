@@ -54,12 +54,12 @@ import UVCard from '@/components/UVCard.vue';
 import { ref, computed } from 'vue';
 import axios from 'axios';
 import WeatherTrendCard from '@/components/WeatherTrendCard.vue';
-
+// import env
 const currentUV = ref(8);
 const currentWeatherData = ref({});
 const currentHourlyData = ref([]);
 const selectedCity = ref("");
-const apiKey = "eb27516e318ad336a5ada141d5a72e5f";
+const apiKey = import.meta.env.VITE_OPENWEATHER_KEY;
 
 const locationString = computed(() => {
   const tz = currentWeatherData.value?.timezone;

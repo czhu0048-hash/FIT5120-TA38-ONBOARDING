@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ForYouView from '../views/ForYouView.vue'
 import AwarenessView from '@/views/AwarenessView.vue'
+import AwarenessViewOne from '@/views/AwarenessViewOne.vue'
 
 const routes = [
     {
@@ -17,6 +18,10 @@ const routes = [
         path: '/awareness',
         name: 'Awareness',
         component: AwarenessView
+    }, {
+        path: '/awarenessOne',
+        name: 'AwarenessOne',
+        component: AwarenessViewOne
     }
 ]
 
