@@ -15,15 +15,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  // Forward any /api/* request from localhost:5173 to 
-  // https:https://sunsafe-web.onrender.com
-  server: {
-    proxy: {
-      '/api': {
-        target: 'https://sunsafe-web.onrender.com',
-        changeOrigin: true,
-        secure: true,
-      },
-    },
-  },
+
 })

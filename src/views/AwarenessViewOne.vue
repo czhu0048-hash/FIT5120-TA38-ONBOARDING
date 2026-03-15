@@ -32,10 +32,12 @@ const weatherTrendData = ref([]);
 const error = ref('');
 const loading = ref(true);
 
+
 onMounted(async () => {
     try {
-        const response = await axios.get('/api/uv-trends/');
+        const response = await axios.get('https://sunsafe-web.onrender.com/api/uv-trends/');
         weatherTrendData.value = response.data;
+        console.log(response.data);
     } catch (err) {
         error.value = err.message;
     } finally {

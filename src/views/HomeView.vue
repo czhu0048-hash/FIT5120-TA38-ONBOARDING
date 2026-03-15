@@ -78,7 +78,7 @@ const selectedLalon = computed(() => cityCoordinates[selectedCity.value] ?? null
 
 const setCurrentUV = () => {
   var uvi = currentWeatherData.value?.current?.uvi;
-  if (uvi) currentUV.value = uvi;
+  if (uvi != null) currentUV.value = uvi;
 };
 
 const setCurrentHourlyData = () => {
