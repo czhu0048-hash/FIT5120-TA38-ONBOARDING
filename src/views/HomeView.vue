@@ -21,7 +21,7 @@
       <div class="col-12 col-md-3">
         <div class="homepage_element card d-flex align-items-center justify-content-center">
           <UtilityCard label1="Location selection">
-            <select class="col-10 offset-1" v-model="selectedCity" @change="getWeatherDataSelectedLocatoin">
+            <select class="col-10 offset-1" v-model="selectedCity" @change="getWeatherDataSelectedLocation">
               <option value="Mel">Melbourne</option>
               <option value="Syd">Sydney</option>
               <option value="Bris">Brisbane</option>
@@ -31,7 +31,7 @@
       </div>
 
       <!-- <div class="homepage_element col-12 col-md-6"></div> -->
-      <div class="homepage_element_sm col-2 offset-5 offset-md-2 accent-yellow" @click="getWeatherDataCurrentLocatoin"
+      <div class="homepage_element_sm col-2 offset-5 offset-md-2 accent-yellow" @click="getWeatherDataCurrentLocation"
         style="color: black; text-align: center;">
         <label>Refresh Location</label>
       </div>
@@ -60,6 +60,7 @@ const currentWeatherData = ref({});
 const currentHourlyData = ref([]);
 const selectedCity = ref("");
 const apiKey = import.meta.env.VITE_OPENWEATHER_KEY;
+// const apiKey = import.meta.env.VITE_OPENWEATHER_KEY;
 
 const locationString = computed(() => {
   const tz = currentWeatherData.value?.timezone;
@@ -110,11 +111,12 @@ const uvDescription = () => {
   }
 }
 
-const getWeatherDataCurrentLocatoin = async () => {
+// Called when refesh button is clicked
+const getWeatherDataCurrentLocation = async () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(async (position) => {
       const { latitude, longitude } = position.coords;
-      const url = `http://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
+      const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
       await fetchWeatherData(url);
       setCurrentUV(); // After location is updated, also update current UV.
       setCurrentHourlyData(); // Update hourly data
@@ -122,8 +124,9 @@ const getWeatherDataCurrentLocatoin = async () => {
   }
 }
 
-const getWeatherDataSelectedLocatoin = async () => {
-  const url = `http://api.openweathermap.org/data/3.0/onecall?lat=${selectedLalon.value.lat}&lon=${selectedLalon.value.lon}&appid=${apiKey}`;
+// Called when new location selected
+const getWeatherDataSelectedLocation = async () => {
+  const url = `https://api.openweathermap.org/data/3.0/onecall?lat=${selectedLalon.value.lat}&lon=${selectedLalon.value.lon}&appid=${apiKey}`;
   await fetchWeatherData(url);
   setCurrentUV(); // After location is updated, also update current UV.
   setCurrentHourlyData(); // Update hourly data
