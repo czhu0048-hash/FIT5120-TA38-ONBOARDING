@@ -1,3 +1,6 @@
+/**
+* Display weather trends.
+*/
 <template>
     <div class="container">
         <div ref="chartRef"></div>

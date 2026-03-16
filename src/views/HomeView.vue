@@ -2,7 +2,7 @@
   <div class="container-fluid mt-3">
     <div class="row g-3 justify-content-start">
 
-      <div class="col-12 col-md-6 h-md-100">
+      <div class="col-12 col-md-8 h-md-100">
         <div class="h-auto card">
           <UVCard :location="locationString" :uv-label="uvLable()" :current-u-v="uvPercentage()"
             :uv-description="uvDescription()" />
@@ -10,7 +10,7 @@
       </div>
 
 
-      <div class="col-12 col-md-3">
+      <div class="col-12 col-md-2">
         <div class="homepage_element card d-flex align-items-center justify-content-center">
           <UtilityCard label1="Today's clothing" lable2="Long sleeve shirt, wide brim hat">
 
@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <div class="col-12 col-md-3">
+      <div class="col-12 col-md-2">
         <div class="homepage_element card d-flex align-items-center justify-content-center">
           <UtilityCard label1="Location selection">
             <select class="col-10 offset-1" v-model="selectedCity" @change="getWeatherDataSelectedLocation">
@@ -51,7 +51,7 @@
 <script setup>
 import UtilityCard from '@/components/UtilityCard.vue';
 import UVCard from '@/components/UVCard.vue';
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import axios from 'axios';
 import WeatherTrendCard from '@/components/WeatherTrendCard.vue';
 // import env
@@ -75,6 +75,11 @@ const cityCoordinates = {
 };
 
 const selectedLalon = computed(() => cityCoordinates[selectedCity.value] ?? null);
+
+onMounted(() => {
+  selectedCity.value = "Mel";
+  getWeatherDataSelectedLocation();
+})
 
 const setCurrentUV = () => {
   var uvi = currentWeatherData.value?.current?.uvi;

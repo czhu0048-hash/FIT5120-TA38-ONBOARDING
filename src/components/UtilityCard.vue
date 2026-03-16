@@ -1,3 +1,6 @@
+/**
+* A simple layout designed for multiple purpose
+*/
 <template>
     <div class="colmn">
         <div class="col-12 offset-1" style="stroke: black;">

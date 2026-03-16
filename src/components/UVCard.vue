@@ -1,3 +1,6 @@
+/**
+* Display UV and alerts.
+*/
 <template>
     <div class="column">
         <div class="col-5 offset-1">
@@ -8,9 +11,9 @@
                 <i class="col-auto mt-3 pi pi-sun" color="000" style="font-size: 2rem"></i>
                 <h5 class="col-auto mt-3">Current UV index:</h5>
                 <h1 class="col-auto">{{ (currentUV / 10).toString() }}</h1>
-                <div class=" col-3 col-md-2 accent-brightyellow mb-2 mt-2" style="border-radius: 10%;
+                <div class="col-auto accent-brightyellow mb-2 mt-2" style="border-radius: 10%;
                 text-align: center; align-items: center;">
-                    <label class="mt-2">{{ uvLabel }}</label>
+                    <label class="col-auto mt-2">{{ uvLabel }}</label>
                 </div>
             </div>
         </div>

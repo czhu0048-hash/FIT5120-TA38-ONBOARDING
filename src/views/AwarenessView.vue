@@ -1,3 +1,6 @@
+<!-- 
+This view is abandoned, cause we no longer need two awareness views.
+-->
 <template>
   <!-- Knowledge 1 -->
   <div class="row g-3 justify-content-start">
