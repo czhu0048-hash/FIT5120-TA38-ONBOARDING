@@ -4,7 +4,7 @@
   <div class="d-flex min-vh-100">
     <!-- Sidebar Navigation -->
     <nav class="d-flex col-2 flex-column p-3 bg-sidebar">
-      <label class="to_homepage fs-5 mb-4" @click="toHome" style="font-size: x-large;">SunSafe</label>
+      <h4 class="to_homepage fs-5 mb-4" @click="toHome">SunSafe</h4>
       <ul class="nav flex-column">
         <li class="nav-item mb-2">
           <router-link to="/dashboard" class="nav_item_custom text-black">Dashboard</router-link>
@@ -38,6 +38,7 @@ const toHome = () => {
 <style scoped>
 .to_homepage:hover {
   background-color: coral;
+  cursor: none;
 }
 
 .nav_item_custom {

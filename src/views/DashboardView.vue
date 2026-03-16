@@ -12,9 +12,9 @@
 
       <div class="col-12 col-md-2">
         <div class="homepage_element card d-flex align-items-center justify-content-center">
-          <UtilityCard label1="Today's clothing" lable2="Long sleeve shirt, wide brim hat">
+          <ClothingSuggestionCard :clothing-suggestion="clothingSuggestions">
 
-          </UtilityCard>
+          </ClothingSuggestionCard>
         </div>
       </div>
 
@@ -54,6 +54,7 @@ import UVCard from '@/components/UVCard.vue';
 import { ref, computed, onMounted } from 'vue';
 import axios from 'axios';
 import WeatherTrendCard from '@/components/WeatherTrendCard.vue';
+import ClothingSuggestionCard from '@/components/ClothingSuggestionCard.vue';
 // import env
 const currentUV = ref(8);
 const currentWeatherData = ref({});
@@ -67,6 +68,17 @@ const locationString = computed(() => {
   if (tz) return tz.replace('_', ' ');
   return 'Melbourne, VIC';
 });
+
+const clothingSuggestions = computed(() => {
+  var uv = currentUV.value;
+  if (uv < 3) {
+    return `T-shirt, Shorts`
+  } else if (uv < 6) {
+    return `Baseball hat, collar shirt`
+  } else {
+    return `Long sleeve shirt, wide brim hat, sunglasses`
+  }
+})
 
 const cityCoordinates = {
   Mel: { lat: -37.8136, lon: 144.9631 },
