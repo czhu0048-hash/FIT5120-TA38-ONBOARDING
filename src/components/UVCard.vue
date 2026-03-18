@@ -4,7 +4,7 @@
 <template>
     <div class="column">
         <div class="col-5 offset-1">
-            <label style="color: grey;">{{ location }}</label>
+            <label style="color: grey;">{{ location }} {{ timeHHMM }}</label>
         </div>
         <div class="col-8 offset-1">
             <div class="row">
@@ -32,6 +32,8 @@
 </template>
 
 <script setup>
+import { computed } from 'vue';
+
 defineProps({
     currentUV: {
         type: Number,
@@ -53,4 +55,15 @@ defineProps({
         default: 'Melbourne Vic, Australia'
     }
 });
+
+
+const timeHHMM = computed(() => {
+    const date = new Date();
+    const t = date.toLocaleTimeString('en-GB', { // 'en-GB' locale uses 24-hour time by default
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+    return t;
+}
+) 
 </script>

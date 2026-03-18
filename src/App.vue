@@ -12,9 +12,9 @@
         <li class="nav-item mb-2">
           <router-link to="/awarenessOne" class="nav_item_custom text-black">Awareness</router-link>
         </li>
-        <!-- <li class="nav-item mb-2">
+        <li class="nav-item mb-2">
           <router-link to="/foryou" class="nav_item_custom text-black">For You</router-link>
-        </li> -->
+        </li>
       </ul>
     </nav>
 
