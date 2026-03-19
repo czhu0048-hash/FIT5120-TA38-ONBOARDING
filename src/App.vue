@@ -7,7 +7,7 @@
       <h4 class="to_homepage fs-5 mb-4" @click="toHome">SunSafe</h4>
       <ul class="nav flex-column">
         <li class="nav-item mb-2">
-          <router-link to="/dashboard" class="nav_item_custom text-black">Dashboard</router-link>
+          <router-link to="/dashboard" class="nav_item_custom text-black">Check UV Now</router-link>
         </li>
         <li class="nav-item mb-2">
           <router-link to="/awarenessOne" class="nav_item_custom text-black">Awareness</router-link>
