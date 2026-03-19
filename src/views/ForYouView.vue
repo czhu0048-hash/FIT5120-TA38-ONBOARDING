@@ -63,19 +63,12 @@
           <transition name="slide-up">
             <div v-if="result" class="card shadow border-0 result-card mb-5">
               <div class="card-body p-4">
-                <h5 class="card-title fw-bold text-center mb-4">Result</h5>
-
-                <div class="text-center rounded p-3 mb-4 dosage-box">
-                  <div class="display-5 fw-bold dosage-value">{{ result.dosage }}</div>
-                </div>
-
+                <h5 class="card-title fw-bold text-center mb-4">Dosage recommendation and sun protection factor</h5>
                 <div class="row g-3 mb-4">
-                  <div class="col-6">
-                    <div class="text-center p-3 rounded info-tile">
-                      <div class="fs-4 fw-bold">{{ result.reapplyInterval }}</div>
-                    </div>
+                  <div class="text-center rounded p-3 mb-4 dosage-box">
+                    <div class="display-5 fw-bold dosage-value">{{ result.dosage }}</div>
                   </div>
-                  <div class="col-6">
+                  <div class="col-6 offset-3">
                     <div class="text-center p-3 rounded info-tile">
                       <div class="fs-4 fw-bold">SPF {{ result.spf }}+</div>
                     </div>
