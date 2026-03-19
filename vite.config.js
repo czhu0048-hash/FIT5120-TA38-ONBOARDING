@@ -6,7 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/FIT5120-TA38-ONBOARDING/',
+  // base: '/FIT5120-TA38-ONBOARDING/',
   plugins: [
     vue(),
     vueDevTools(),
